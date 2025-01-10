@@ -9,8 +9,7 @@ export default function Artists() {
     useEffect(()=>{
         const fetchArtists = async () => {
             const response = await fetch("https://qevent-backend.labs.crio.do/artists");
-            const data = await response.json(); 
-            console.log(data);
+            const data = await response.json();  
             setArtists(data);
         };
         fetchArtists();

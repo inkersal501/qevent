@@ -1,7 +1,10 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 const ArtistCard = ({ artistData }) => {
 
+  const router = useRouter();
+  
   return (
     <div className="hover-inverse group w-[20%] min-w-[300px]  h-fit flex text-center justify-center transform transition-transform duration-400 hover:scale-110 hover:bg-gradient-to-r hover:from-orange-200 hover:to-white text-dark m-4 border-slate-400 border rounded-md px-8 py-2.5">
      
@@ -18,7 +21,8 @@ const ArtistCard = ({ artistData }) => {
             <h3 className="text-2xl">{artistData.artist}</h3>
           </div>
           <button
-            className=" bg-gradient-to-r from-orange-400 to-teal-600 text-white px-4 py-2 rounded-md font-medium hover:opacity-70"
+            onClick={() => {router.push("/events?artist="+artistData.name)}}
+            className="bg-gradient-to-r from-orange-400 to-teal-600 text-white px-4 py-2 rounded-md font-medium hover:opacity-70"
           >
             View Events
           </button>
