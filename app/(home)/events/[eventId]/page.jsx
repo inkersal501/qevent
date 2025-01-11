@@ -5,7 +5,7 @@ export default async function EventsById ({params}) {
  
     const { eventId } = params; 
  
-    const response = await fetch("https://qevent-backend.labs.crio.do/events/"+eventId);
+    const response = await fetch("https://qevent-backend.labs.crio.do/events/"+eventId, { cache: "force-cache" });
     const eventData = await response.json();           
 
     return (

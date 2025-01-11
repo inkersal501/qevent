@@ -2,7 +2,7 @@ import ArtistCard from "@/components/ArtistCard";
 
 export default async function Artists() { 
  
-    const response = await fetch("https://qevent-backend.labs.crio.do/artists");
+    const response = await fetch("https://qevent-backend.labs.crio.do/artists", { cache: "force-cache" });
     const artists = await response.json();  
 
     return (

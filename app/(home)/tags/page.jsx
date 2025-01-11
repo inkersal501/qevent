@@ -1,8 +1,8 @@
 import Tag from "@/components/Tag"; 
  
 export default async function Tags() { 
-    
-    const response = await fetch("https://qevent-backend.labs.crio.do/tags");
+
+    const response = await fetch("https://qevent-backend.labs.crio.do/tags", { cache: "force-cache" });
     const tags = await response.json();  
            
     return (
