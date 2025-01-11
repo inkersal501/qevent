@@ -1,20 +1,12 @@
 "use client";
-import Tag from "@/components/Tag";
-import { useState, useEffect } from "react";
+import Tag from "@/components/Tag"; 
 
-export default function EventsById (props) {
+export default async function EventsById ({params}) {
  
-    const { eventId } = props.params;
-    const [eventData, setEventData] = useState({});
-
-    useEffect(()=>{
-        const fetchEvent = async () => {
-            const response = await fetch("https://qevent-backend.labs.crio.do/events/"+eventId);
-            const data = await response.json();         
-            setEventData(data);
-        };
-        fetchEvent();        
-    }, [eventId]);
+    const { eventId } = params; 
+ 
+    const response = await fetch("https://qevent-backend.labs.crio.do/events/"+eventId);
+    const eventData = await response.json();           
 
     return (
         <>  

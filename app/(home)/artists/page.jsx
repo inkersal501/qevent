@@ -1,19 +1,9 @@
-"use client";
-import ArtistCard from "@/components/ArtistCard"; 
-import { useState, useEffect } from "react"; 
+import ArtistCard from "@/components/ArtistCard";  
 
-
-export default function Artists() {
-    const [artists, setArtists] = useState([]);
-
-    useEffect(()=>{
-        const fetchArtists = async () => {
-            const response = await fetch("https://qevent-backend.labs.crio.do/artists");
-            const data = await response.json();  
-            setArtists(data);
-        };
-        fetchArtists();
-    }, []);
+export default async function Artists() { 
+ 
+    const response = await fetch("https://qevent-backend.labs.crio.do/artists");
+    const artists = await response.json();  
 
     return (
         <>

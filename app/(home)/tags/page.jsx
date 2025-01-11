@@ -1,21 +1,10 @@
-"use client";
-import Tag from "@/components/Tag";
-import { useState, useEffect } from "react"; 
+import Tag from "@/components/Tag"; 
  
-
-export default function Tags() {
-
-    const [tags, setTags] = useState([]);
-
-    useEffect(()=>{
-        const fetchTags = async () => {
-            const response = await fetch("https://qevent-backend.labs.crio.do/tags");
-            const data = await response.json();  
-            setTags(data);
-        };
-        fetchTags();
-    }, []);
-
+export default async function Tags() { 
+    
+    const response = await fetch("https://qevent-backend.labs.crio.do/tags");
+    const tags = await response.json();  
+           
     return (
         <>  
             <div className="flex h-screen">
