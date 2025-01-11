@@ -1,4 +1,3 @@
-"use client";
 import Tag from "@/components/Tag"; 
 
 export default async function EventsById ({params}) {
