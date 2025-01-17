@@ -1,8 +1,8 @@
 import EventCard from "@/components/EventCard"; 
 
 export default async function Events({searchParams}) {
- 
-    const {artist, tag} = searchParams.artist;  
+    
+    const {artist, tag} = searchParams;  
     const response = await fetch("https://qevent-backend.labs.crio.do/events", { cache: "force-cache" });
     const data = await response.json();
     let filteredEvents = data;

@@ -3,23 +3,22 @@
 import "../app/globals.css";
 
 import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
+import Link from "next/link"; 
 import { HomeIcon, PersonIcon } from "@radix-ui/react-icons";
 import { CgProfile } from "react-icons/cg";
 import { useSession, signIn, signOut } from "next-auth/react";
-
+ 
 import { FaRegHeart } from "react-icons/fa";
-import { TfiTicket } from "react-icons/tfi";
+import { TfiTicket } from "react-icons/tfi"; 
 
-const Header = () => {
-  const [session, setSession] = useState(false);
-
+const Header = () => { 
+  
+  const session = useSession(); 
   return (
     <nav className="drop-shadow-2xl flex items-center justify-between p-3 border-b border-slate-200 border-spacing-0 bg-slate-100 h-24">
       <div className="hover-inverse flex items-center justify-center gap-2">
         <Link
-          href={"#"}
+          href={"/"}
           className="text-3xl font-bold max-sm:text-2xl bg-gradient-to-r from-orange-400 to-teal-600 bg-clip-text text-transparent"
         >
           <Image
@@ -75,17 +74,17 @@ const Header = () => {
             <p>Tags</p>
           </Link>
 
-          {session ? (
+          {session.status === "authenticated" ? (
             <button
-              onClick={() => {}}
+              onClick={() => {signOut()}}
               className=" bg-gradient-to-r from-orange-400 to-teal-600 text-white px-4 py-2 rounded-md font-medium hover:opacity-70"
             >
               Logout
             </button>
           ) : null}
-          {!session ? (
+          {!session || session.status !== "authenticated" ? (
             <button
-              onClick={() => {}}
+              onClick={() => {signIn("google")}}
               className=" bg-gradient-to-r from-orange-400 to-teal-600 text-white px-4 py-2 rounded-md font-medium hover:opacity-70"
             >
               Log in
