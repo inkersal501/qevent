@@ -73,14 +73,24 @@ const Header = () => {
             </div>
             <p>Tags</p>
           </Link>
-
+ 
           {session.status === "authenticated" ? (
+            <><Link
+            href={"/create-event/"}
+            className="flex items-center justify-center gap-2 hover:text-primary hover:scale-105 hover:underline-offset-8 hover:underline transition-all"
+          >
+            <div className="scale-110">
+              <FaRegHeart />
+            </div>
+            <p>Create Event</p>
+          </Link>
             <button
               onClick={() => {signOut()}}
               className=" bg-gradient-to-r from-orange-400 to-teal-600 text-white px-4 py-2 rounded-md font-medium hover:opacity-70"
             >
               Logout
             </button>
+            </>
           ) : null}
           {!session || session.status !== "authenticated" ? (
             <button
