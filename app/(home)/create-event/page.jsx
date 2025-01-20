@@ -43,7 +43,7 @@ export default function CreateEvent () {
         if(response.status === 201) {
             router.push("/events/");
         }else{
-            alert("Event creation failed");
+            window.alert("Event creation failed");
         }
     };
 
