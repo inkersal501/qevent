@@ -6,7 +6,7 @@ export default async function EventsById ({params}) {
  
     const response = await fetch("https://qevent-backend.labs.crio.do/events/"+eventId, { cache: "force-cache" });
     const eventData = await response.json();           
-
+    const tags = eventData.tags;
     return (
         <>  
             <div className="px-12 py-10">
@@ -27,7 +27,7 @@ export default async function EventsById ({params}) {
 
                 <div className="mt-20 flex flex-col gap-4">
                     <div className="flex gap-2">
-                        {eventData.tags && eventData.tags.map((tag) => (
+                        {tags.map((tag) => (
                             <Tag text={tag} key={tag} />
                         ))}
                     </div>

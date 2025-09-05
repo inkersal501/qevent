@@ -14,6 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <SessionWrapper>
       <html lang="en">
+        <head> 
+          <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+          <link rel="icon" src="/images/logo.png"/>
+        </head>
         <body className={inter.className}>
           <ThemeProvider attribute="class" defaultTheme="light">
             <Header />
