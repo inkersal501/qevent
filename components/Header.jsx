@@ -86,8 +86,8 @@ const Header = () => {
             <p>Create Event</p>
           </Link>
           {session.data.user.name &&
-          <div className="text-teal-600">
-            Welcome {session.data.user.name},
+          <div className="text-teal-600 text-sm">
+            Welcome, {session.data.user.name}
           </div>
           }
             <button
