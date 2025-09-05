@@ -11,7 +11,7 @@ export default async function EventsById ({params}) {
         <>  
             <div className="px-12 py-10">
                 <div className="flex justify-center items-center">
-                    <img src={eventData.image} className=""/> 
+                    <img src={eventData.image} className="" loading="lazy"/> 
                 </div>
                 <div className="my-4">
                     <h1 className="text-5xl font-bold max-sm:text-3xl bg-gradient-to-br from-orange-400 to-teal-600 bg-clip-text text-transparent">

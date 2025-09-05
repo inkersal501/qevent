@@ -13,6 +13,7 @@ const ArtistCard = ({ artistData }) => {
             className="w-24 h-24 mb-3 group-hover:filter-none rounded-full shadow-lg m-auto"
             src={artistData.image}
             alt={`${artistData.name} image`}
+            loading="lazy"
           />
           <p>{artistData.location}</p>
           <h2 className="text-2xl font-bold">{artistData.name}</h2>

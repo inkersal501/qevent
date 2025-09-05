@@ -14,6 +14,7 @@ import { TfiTicket } from "react-icons/tfi";
 const Header = () => { 
   
   const session = useSession(); 
+  console.log(session)
   return (
     <nav className="drop-shadow-2xl flex items-center justify-between p-3 border-b border-slate-200 border-spacing-0 bg-slate-100 h-24">
       <div className="hover-inverse flex items-center justify-center gap-2">
@@ -84,6 +85,9 @@ const Header = () => {
             </div>
             <p>Create Event</p>
           </Link>
+          <div>
+            Welcome {session.username},
+          </div>
             <button
               onClick={() => {signOut()}}
               className=" bg-gradient-to-r from-orange-400 to-teal-600 text-white px-4 py-2 rounded-md font-medium hover:opacity-70"
